@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Product Return Form</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<h1>Product Return Form</h1>
+		</div>
+	
+		<div id="container">
+			<form id="productReturn" name="productReturn" method="get" onsubmit="return checkform(this);"><!--Form Starts Here-->
+					<!--Personal Information-->
+					<h2>Personal Information</h2>
+					<input id="firstName" name="firstName" placeholder="First Name">
+					<input id="lastName" name="lastName" placeholder="Last Name">
+					<br/>
+					
+					<input id="email" name="email" placeholder="Email Address">
+					<input type="password" id="pwd" name="password" maxlength="8" placeholder="Password">
+					<br/>
+
+					<input id="address" name="address" placeholder="Address">
+					<input id="apt" name="apt" placeholder="Apt"><br/>
+
+					<input id="city" name="city" placeholder="City">
+					<select name="state">
+            			<option value="" disabled selected>State</option>
+						<option value="AL">AL</option>
+						<option value="AK">AK</option>
+						<option value="AZ">AZ</option>
+						<option value="AR">AR</option>
+						<option value="CA">CA</option>
+						<option value="CO">CO</option>
+						<option value="CT">CT</option>
+						<option value="DE">DE</option>
+						<option value="DC">DC</option>
+						<option value="FL">FL</option>
+						<option value="GA">GA</option>
+						<option value="HI">HI</option>
+						<option value="ID">ID</option>
+						<option value="IL">IL</option>
+						<option value="IN">IN</option>
+						<option value="IA">IA</option>
+						<option value="KS">KS</option>
+						<option value="KY">KY</option>
+						<option value="LA">LA</option>
+						<option value="ME">ME</option>
+						<option value="MD">MD</option>
+						<option value="MA">MA</option>
+						<option value="MI">MI</option>
+						<option value="MN">MN</option>
+						<option value="MS">MS</option>
+						<option value="MO">MO</option>
+						<option value="MT">MT</option>
+						<option value="NE">NE</option>
+						<option value="NV">NV</option>
+						<option value="NH">NH</option>
+						<option value="NJ">NJ</option>
+						<option value="NM">NM</option>
+						<option value="NY">NY</option>
+						<option value="NC">NC</option>
+						<option value="ND">ND</option>
+						<option value="OH">OH</option>
+						<option value="OK">OK</option>
+						<option value="OR">OR</option>
+						<option value="PA">PA</option>
+						<option value="RI">RI</option>
+						<option value="SC">SC</option>
+						<option value="SD">SD</option>
+						<option value="TN">TN</option>
+						<option value="TX">TX</option>
+						<option value="UT">UT</option>
+						<option value="VT">VT</option>
+						<option value="VA">VA</option>
+						<option value="WA">WA</option>
+						<option value="WV">WV</option>
+						<option value="WI">WI</option>
+						<option value="WY">WY</option>
+					</select>
+					<input id="zip" name="zip" maxlength="5" placeholder="Zip"><br/>
+
+					<input id="phone" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" maxlength="12" placeholder="Phone Number" required><br/>
+					<span>Format: XXX-XXX-XXXX</span><br/><br/>
+				
+					<!--Product Return Information-->
+					<h2>Product Information</h2>
+					<p>Please select which item you want to return.</p>
+					<input type="radio" name="product" id="book">Book<br/>
+					<input type="radio" name="product" id="cd">CD<br/>
+					<input type="radio" name="product" id="dvd">DVD<br/>
+					<input type="radio" name="product" id="download">Download<br/>
+
+					<textarea name="reasonForReturn" maxlength="256" placeholder="Reason For Return" rows="10" cols="30"></textarea>
+				
+			</form><!--End of Form-->
+			
+			<!-- START OF CAPTCHA http://allwebco-templates.com/support/script-simple-captcha.htm -->
+			<br>
+			<div class="capbox">
+
+			<div id="CaptchaDiv"></div>
+			<div class="capbox-inner">
+				Type the above number:<br>
+
+				<input type="hidden" id="txtCaptcha">
+				<input type="text" name="CaptchaInput" id="CaptchaInput" size="15"><br>
+
+			</div>
+			</div>
+			<br><br>
+			<!-- END OF CAPTCHA -->
+
+			<div>
+				<input type="checkbox"><em>*</em>I have read and agreed to the <a href="">terms and conditions</a>.<br/>
+	    	</div>
+			
+			<!--CAPTCHA SCRIPT-->
+			<script type="text/javascript">
+				function checkform(theform) {
+					var why = "";
+
+					if (theform.CaptchaInput.value == "") {
+						why += "Please Enter CAPTCHA Code.\n";
+					}
+
+					if (theform.CaptchaInput.value != "") {
+						if(ValidCaptcha(theform.CaptchaInput.value) == false) {
+						why += "The CAPTCHA code does not match.\n";
+						}
+					}
+
+					if(why != "") {
+						alert(why);
+						return false;
+						}
+					}
+
+					var a = Math.ceil(Math.random() * 9)+ '';
+					var b = Math.ceil(Math.random() * 9)+ '';
+					var c = Math.ceil(Math.random() * 9)+ '';
+					var d = Math.ceil(Math.random() * 9)+ '';
+					var e = Math.ceil(Math.random() * 9)+ '';
+				
+					var code = a + b + c + d + e;
+					document.getElementById("txtCaptcha").value = code;
+					document.getElementById("CaptchaDiv").innerHTML = code;
+
+					<!--Validate input against the generated number-->
+					function ValidCaptcha() {
+						var str1 = removeSpaces(document.getElementById('txtCaptcha').value);
+						var str2 = removeSpaces(document.getElementById('CaptchaInput').value);
+						if (str1 == str2) {
+							return true;
+						} else{
+							return false;
+						}
+				}
+
+				<!--Remove the spaces from the entered and generated code-->
+				function removeSpaces(string) {
+					return string.split(' ').join('');
+				}
+				
+			</script>
+			
+		</div>
+		<!--END OF CAPTCHA SCRIPT-->
+		
+		<div id="footer">
+				<button name="submit" onclick="validate()">Submit Form</button>
+		</div>
+		
+	</body>
+    
+</html>

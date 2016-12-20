@@ -1,0 +1,163 @@
+body {
+	max-width: 600px;
+	padding: 0px 30px;
+	margin: 0;
+	align: center;
+}
+
+button {
+	width: 600px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+div {
+	margin-top: 0px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+em {
+	color: red;
+	font-weight: bold;
+	padding: 10px auto;
+}
+
+form {
+	font-size: 14px;
+	width: 600px;
+}
+
+input, textarea {
+	font-family: Tahoma, Geneva, sans-serif;
+	padding: 10px;
+	margin: 8px auto;
+	display: inline-block;
+	border: 1px solid #999999;
+	border-radius: 4px;
+	box-sizing: border-box;
+	width: 295px;
+}
+
+h1 {
+	margin-bottom: 0px;
+	font-size: 24px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	color: #4589BE;
+}
+
+h2 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-weight: bold;
+	font-variant: small-caps;
+	color: #4589BE;
+	font-size: 18px;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+input[type=checkbox]{
+	width: 14px;
+}
+
+input[type=password]{
+	width: 160px;
+}
+
+input[type=radio]{
+	width: 20px;
+	padding: 10px auto;
+}
+
+p {
+	margin: 0 0 10px 0;
+	padding: 0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+select {
+	font-family: sans-serif;
+	width: 100px;
+	padding: 10px 15px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #999999;
+	border-radius: 4px;
+	box-sizing: border-box
+}
+
+textarea {
+	width: 600px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.capbox { /*http://allwebco-templates.com/support/script-simple-captcha.htm*/
+	background-color: #D6D7D7;
+	display: inline-block;
+	*display: inline; zoom: 1; /* FOR IE7-8 */
+	padding: 8px 8px 8px 8px;
+}
+
+.capbox-inner { /*http://allwebco-templates.com/support/script-simple-captcha.htm*/
+	font: bold 11px arial, sans-serif;
+	color: #000000;
+	background-color: #D6D7D7;
+	margin: 5px auto 0px auto;
+	padding: 3px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#address {
+	width: 300px;
+}
+
+#apt {
+	width: 95px;
+}
+
+#CaptchaDiv { /*http://allwebco-templates.com/support/script-simple-captcha.htm*/
+	font: bold 17px verdana, arial, sans-serif;
+	font-style: italic;
+	color: #000000;
+	background-color: #FFFFFF;
+	padding: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	}
+
+#CaptchaInput { /*http://allwebco-templates.com/support/script-simple-captcha.htm*/
+	margin: 1px 0px 1px 0px; width: 135px;
+}
+
+#container {
+	width: 600px;
+	margin: auto;
+	padding: 10px 15px;
+	background-color: #F1EFEF;
+	box-shadow: 10px 10px 20px #898B8C;
+}
+
+#footer {
+	width: 600px;
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 10px 15px;
+	background-color: #DCD8D9;
+	box-shadow: 10px 10px 20px #898B8C;
+}
+
+#header {
+	width: 600px;
+	margin: auto;
+	padding: 10px 15px;
+	margin-top: 20px;
+	background-color: #DCD8D9;
+	box-shadow: 10px 10px 20px #898B8C;
+}
+
+#zip {
+	width: 95px;
+}
